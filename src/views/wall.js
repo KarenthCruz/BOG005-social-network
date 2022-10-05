@@ -94,7 +94,6 @@ export const wall = () => {
 
   buttonPost.addEventListener('click', () => {
     const post = inputPost.value;
-    console.log('post', post, editStatus);
     if (!editStatus) { // Si no se está editando el post, guardalo! 
       savePost();
       savePostFirestore(post).then(() => {
