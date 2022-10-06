@@ -8,6 +8,7 @@ import {
   getFirestore, collection, addDoc, getDocs, getDoc, onSnapshot, doc, query,
   orderBy, deleteDoc, updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+import { onNavigate } from '../main.js';
 
 
 import config from './config.js'; // config es la llave de firebase
@@ -46,6 +47,16 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos comctados/////
     console.log('Usuario Conectado');
   } else {
     console.log('No se encuentra el usuario');
+  }
+});
+
+// Detectando el estado de autenticación
+onAuthStateChanged(auth, (user) => { /// dice si estamos comctados/////
+  if (user) {
+    onNavigate('/wall')
+  } else {
+    console.log('No se encuentra el usuario');
+    onNavigate('/')
   }
 });
 
