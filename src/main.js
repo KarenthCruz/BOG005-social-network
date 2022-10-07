@@ -14,20 +14,20 @@ const routes = {
 // función para anexar un registro al historial del navegador (.pushState)
 const onNavigate = (pathname, routesList=routes) => {
   const root = document.getElementById('root');
-  window.history.pushState(
-    {}, // estado vacio
-    pathname, // title
-    window.location.origin + pathname, // URL + (Ruta)
-  );
+  // window.history.pushState(
+  //   {}, // estado vacio
+  //   pathname, // title
+  //   window.location.origin + pathname, // URL + (Ruta)
+  // );
   root.replaceChildren(routesList[pathname]());
 };
 // Renderiza sólo ésta parte de la ruta
 const component = routes[window.location.pathname];
 
 // onpopstate, se dispara realizando una acción en el navegador como volver
-window.onpopstate = () => {
-  onNavigate(window.location.pathname);
-};
+// window.onpopstate = () => {
+//   onNavigate(window.location.pathname);
+// };
 
 window.addEventListener('load', () => onNavigate(window.location.pathname));
 
