@@ -4,6 +4,7 @@ import { wall } from './views/wall.js';
 import { auth, onAuthStateChanged } from './lib/firebase.js';
 
 const routes = {
+  '': login,
   '/': login, // clave y valor
   '/login': login,
   '/register': register,

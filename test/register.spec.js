@@ -11,20 +11,11 @@ const mockRegister = () => {
     return containRegis;
 };
 
-const mockLogin = () => {
-    const container = document.createElement('section');
-    const title = document.createElement('h1');
-    title.textContent = 'Hola Login';
-    container.appendChild(title);
-    return container;
-}
-
 const mockRoutes = {
     '/register': mockRegister,
-    '/login': mockLogin,
   };
   
-describe('Test de función on Navigate', () => {
+  describe('Test de función on Navigate', () => {
     it('Mostrando la prueba del template de registro', () => {
         document.body.innerHTML = `<div id="root"></div>`;
         onNavigate('/register', mockRoutes)
@@ -32,11 +23,26 @@ describe('Test de función on Navigate', () => {
     })
 });
 
-describe('Test de función on Navigate', () => {
-    it('Mostrando la prueba del template de ingresar', () => {
+
+const mockLoginButton = () => {
+    const container = document.createElement('section');
+    const buttonSign = document.createElement('button');
+    buttonSign.className = 'buttonEnter';
+    buttonSign.textContent = 'Registrarme';
+    container.appendChild(buttonSign);
+    return container;
+}
+
+const mockRouteRegister = {
+    '/Register': mockLoginButton,
+}
+
+describe("Should test button Register", () => {
+    it("Call mockRegisterButton", () => {
         document.body.innerHTML = `<section id="root"></section>`
-        onNavigate('/login', mockRoutes)
-        expect(document.getElementById('root').textContent).toEqual('Hola Login')
+        onNavigate('/Register', mockRouteRegister)
+        expect(document.getElementById('root').textContent).toEqual('Registrarme');
+        expect(document.getElementById('root').textContent).toBeDefined();
+        expect(mockRouteRegister).not.toBeNull();
     })
 })
-
