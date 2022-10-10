@@ -1,7 +1,7 @@
 import { login } from './views/login.js';
 import { register } from './views/register.js';
 import { wall } from './views/wall.js';
-import { auth, onAuthStateChanged } from './lib/firebase.js';
+
 
 const routes = {
   '': login,
@@ -24,10 +24,6 @@ const onNavigate = (pathname, routesList=routes) => {
 // Renderiza sólo ésta parte de la ruta
 const component = routes[window.location.pathname];
 
-// onpopstate, se dispara realizando una acción en el navegador como volver
-// window.onpopstate = () => {
-//   onNavigate(window.location.pathname);
-// };
 
 window.addEventListener('load', () => onNavigate(window.location.pathname));
 

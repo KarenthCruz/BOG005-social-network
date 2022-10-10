@@ -1,7 +1,3 @@
-
-
-
-
 const createUser = (email, password) => {
     return Promise.resolve()
 };

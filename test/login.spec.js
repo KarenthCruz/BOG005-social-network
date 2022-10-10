@@ -34,11 +34,11 @@ const mockLoginButton = () => {
 }
 
 const mockRouteLogin = {
-    '/Register': mockRegisterButton,
+    '/Register': mockLoginButton,
 }
 
 describe("Should test button Register", () => {
-    it("Call mockRegisterButton", () => {
+    it("Call mockLoginButton", () => {
         document.body.innerHTML = `<section id="root"></section>`
         onNavigate('/Register', mockRouteLogin)
         expect(document.getElementById('root').textContent).toEqual('Registrarme');

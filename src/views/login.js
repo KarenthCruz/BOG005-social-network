@@ -53,7 +53,7 @@ export const login = () => {
   buttonRegis.textContent = '¡Regístrate!';
 
   buttonRegis.addEventListener('click', (e) => { // evento para regresar a inicio
-    // e.preventDefault();
+    e.preventDefault();
     onNavigate('/register');
   });
 
@@ -61,7 +61,7 @@ export const login = () => {
   errorText.setAttribute('id', 'errorText');
 
   formlogin.addEventListener('submit', (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const emailLogin = inputEmail.value; // Guardamos los valores de mail y password de los inputs
     const passwordLogin = inputPass.value;
     singUser(emailLogin, passwordLogin)
