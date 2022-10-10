@@ -13,14 +13,14 @@ Red social para prácticantes de yoga
 * [5. Detalles Técnicos](#5-Detalles-técnicos)
 
 
-## **1. Introducción
+## 1. Introducción
 
 Dana yoga Studio es una red social, para aficionados y practicantes de yoga. Aquí podrás, compartir y encontrar frases de inspiración, playlist favoritas, citas célebres y libros recomendados por diferentes autores del mundo del yoga. Al usar la aplicación, podrás crear tus publicaciones, editar, borrar y dar like, interactuando con otros usuarios.  
 
 ![Imágen de la vista móvil](./src/image/view-dana-yoga-studio-mobile.png)
 
 
-## **2. Historias de Usuario
+## 2. Historias de Usuario
 
 En este proyecto se busca construir una red social, que permita a los usuarios crear una cuenta, acceder con correo, ó botón de google, crear sus publicaciones, editarlas, borrarlas e interactuar através del botón de like. 
 

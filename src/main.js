@@ -4,7 +4,6 @@ import { wall } from './views/wall.js';
 
 
 const routes = {
-  '': login,
   '/': login, // clave y valor
   '/login': login,
   '/register': register,
@@ -14,19 +13,14 @@ const routes = {
 // función para anexar un registro al historial del navegador (.pushState)
 const onNavigate = (pathname, routesList=routes) => {
   const root = document.getElementById('root');
-  // window.history.pushState(
-  //   {}, // estado vacio
-  //   pathname, // title
-  //   window.location.origin + pathname, // URL + (Ruta)
-  // );
+  window.history.pushState( // pusState anexa un registro en la sesión de historial del navegador
+    {}, // estado vacio
+    pathname, // title
+    window.location.origin + pathname, // URL + (Ruta)
+  );
   root.replaceChildren(routesList[pathname]());
 };
-// Renderiza sólo ésta parte de la ruta
-const component = routes[window.location.pathname];
-
 
 window.addEventListener('load', () => onNavigate(window.location.pathname));
-
-
 
 export { onNavigate }

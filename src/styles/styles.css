@@ -12,6 +12,7 @@ body{
 }
 .sectionRegister{
     display: flex;
+    justify-content: center;
 }
 .sectionNav{
     display: flex;

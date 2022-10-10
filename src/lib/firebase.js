@@ -32,6 +32,7 @@ const savePostFirestore = async(contentPost) => {
    name: auth.currentUser.displayName, 
    email: auth.currentUser.email})
 };
+
 // Traer el post de firestore a muro
 const postUserProfile = () => query(collection(db, 'posts'));
 // Traer la data de los post guardados
@@ -40,6 +41,7 @@ const getDataPost = (id) => getDocs(doc(db,'posts', id));
 const updateDataPost = (id, newData) => updateDoc(doc(db,'posts', id), newData);
 const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 const getOnePost = (id) => getDoc(doc(db, 'posts', id));
+
 
 // Detectando el estado de autenticación
 onAuthStateChanged(auth, (user) => { /// dice si estamos comctados/////
