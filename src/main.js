@@ -13,11 +13,11 @@ const routes = {
 // función para anexar un registro al historial del navegador (.pushState)
 const onNavigate = (pathname, routesList=routes) => {
   const root = document.getElementById('root');
-  window.history.pushState( // pusState anexa un registro en la sesión de historial del navegador
-    {}, // estado vacio
-    pathname, // title
-    window.location.origin + pathname, // URL + (Ruta)
-  );
+  // window.history.pushState( // pusState anexa un registro en la sesión de historial del navegador
+  //   {}, // estado vacio
+  //   pathname, // title
+  //   window.location.origin + pathname, // URL + (Ruta)
+  // );
   root.replaceChildren(routesList[pathname]());
 };
 
